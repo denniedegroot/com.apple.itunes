@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            .form-label {
+                display: block !important;
+                margin-right: 20px;
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+
+    <h1 data-i18n="settings.title"></h1>
+    <p data-i18n="settings.intro"></p>
+
+    <fieldset>
+        <legend data-i18n="settings.pairing.header"></legend>
+
+        <div class="field row">
+            <label class="form-label" for="settings-address" data-i18n="settings.pairing.host"></label>
+            <input readonly class="form-input" id="settings-address" data-i18n-placeholder="settings.pairing.empty" type="text" value=""/>
+        </div>
+
+        <div class="field row">
+            <label class="form-label" for="settings-pairing-code" data-i18n="settings.pairing.code"></label>
+            <input readonly class="form-input" id="settings-pairing-code" data-i18n-placeholder="settings.pairing.empty" type="text" value=""/>
+        </div>
+
+        <button id="settings-pairing-button" data-i18n="settings.pairing.start" onclick="onPairing()"></button>
+    </fieldset>
+
+    <h1 data-i18n="settings.manual.header"></h1>
+    <p data-i18n="settings.manual.manual"></p>
+
+    <script type="text/javascript">
+        var settings = {};
+
+        function onPairing() {
+            if (settings.paircode != undefined){
+                if (!confirm(__('settings.pairing.renew')))
+                    return;
+            }
+
+            Homey.set('settings', {}, function(err) {
+                if(err)
+                    console.log(err);
+
+                document.getElementById('settings-address').value = __('settings.pairing.empty');
+                document.getElementById('settings-pairing-code').value = __('settings.pairing.empty');
+                document.getElementById('settings-pairing-button').disabled = true;
+                document.getElementById('settings-pairing-button').innerHTML = __('settings.pairing.busy');
+            });
+        }
+
+        function onHomeyReady() {
+            Homey.on('settings_changed', function(data) {
+                settings = data;
+
+                if (settings != undefined) {
+                    document.getElementById('settings-address').value = settings.host;
+                    document.getElementById('settings-pairing-code').value = settings.paircode;
+                    document.getElementById('settings-pairing-button').disabled = false;
+                    document.getElementById('settings-pairing-button').innerHTML = __('settings.pairing.start');
+                }
+            });
+
+            Homey.get('settings', function(err, data) {
+                if (data != undefined) {
+                    settings = data;
+                    document.getElementById('settings-address').value = settings.host;
+                    document.getElementById('settings-pairing-code').value = settings.paircode;
+                }
+
+                Homey.ready()
+            });
+        }
+    </script>
+    </body>
+</html>

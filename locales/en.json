@@ -1,0 +1,20 @@
+{
+  "settings": {
+    "title": "iTunes settings",
+    "intro": "Before Homey can control iTunes we need to pair it with iTunes. Read the manual for instructions.",
+    "header": "iTunes settings",
+    "manual": {
+        "header": "Pairing manual",
+        "manual": "Before Homey can control iTunes we need to pair it with iTunes. Click on the \"Request pairing code\" button to start the pairing process. After clicking the button there should now appear a <img src=\"/app/com.apple.itunes/assets/images/itunes-remote-icon.png\" alt=\"itunes-remote-icon\" height=\"20\"> icon in iTunes which indicates that Homey wants to pair. Click on this <img src=\"/app/com.apple.itunes/assets/images/itunes-remote-icon.png\" alt=\"itunes-remote-icon\" height=\"20\"> icon and iTunes will ask for a pincode, enter anything you like. After entering a pincode the pairing process is complete.<br><br><a href=\"https://support.apple.com/kb/PH12157\" target=\"_blank\">Official Apple Manual</a>"
+    },
+    "pairing": {
+        "header": "iTunes pairing",
+        "host": "iTunes host",
+        "empty": "none",
+        "code": "iTunes pairing code",
+        "start": "Request pairing code",
+        "busy": "Pairing in progress",
+        "renew": "Are you sure you want to request a new pairing code?"
+    }
+  }
+}

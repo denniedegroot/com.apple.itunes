@@ -1,0 +1,74 @@
+{
+  "id": "com.apple.itunes",
+  "version": "1.0.0",
+  "compatibility": "0.x || 1.x",
+  "category": "music",
+  "name": {
+    "en": "iTunes",
+    "nl": "iTunes"
+  },
+  "description": {
+    "en": "Give Homey the ability to control iTunes",
+    "nl": "Laat Homey iTunes besturen"
+  },
+  "author": {
+    "name": "Dennie de Groot",
+    "email": "mail@denniedegroot.nl",
+    "website": "https://denniedegroot.nl"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Maarten Jansen",
+        "email": "m.jansen.email@gmail.com"
+      }
+    ]
+  },
+  "images": {
+    "large": "./assets/images/large.jpg",
+    "small": "./assets/images/small.jpg"
+  },
+  "dependencies": {
+    "mdns-js": "*"
+  },
+  "media": [ "play", "pause", "search" ],
+  "flow": {
+    "actions": [
+      {
+        "id": "pause",
+        "title": {
+          "en": "Pause",
+          "nl": "Pauzeren"
+        }
+      },
+      {
+        "id": "play",
+        "title": {
+          "en": "Play",
+          "nl": "Afspelen"
+        }
+      },
+      {
+        "id": "playpause",
+        "title": {
+          "en": "Play/Pause",
+          "nl": "Afspelen/Pauzeren"
+        }
+      },
+      {
+        "id": "previous",
+        "title": {
+          "en": "Previous",
+          "nl": "Vorige"
+        }
+      },
+      {
+        "id": "next",
+        "title": {
+          "en": "Next",
+          "nl": "Volgende"
+        }
+      }
+    ]
+  }
+}
