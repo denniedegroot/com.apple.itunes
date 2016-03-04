@@ -68,6 +68,54 @@
           "en": "Next",
           "nl": "Volgende"
         }
+      },
+      {
+        "id": "volume",
+        "title": {
+            "en": "Volume",
+            "nl": "Volume"
+        },
+        "args": [
+          {
+            "name": "volume_percent",
+            "type": "range",
+            "min": 0,
+            "max": 100,
+            "label": "%"
+          }
+        ]
+      },
+      {
+        "id": "volume_down",
+        "title": {
+          "en": "Volume down",
+          "nl": "Volume omlaag"
+        },
+        "args": [
+          {
+            "name": "volume_down",
+            "type": "range",
+            "min": 1,
+            "max": 20,
+            "label": "%"
+          }
+        ]
+      },
+      {
+        "id": "volume_up",
+        "title": {
+          "en": "Volume up",
+          "nl": "Volume omhoog"
+        },
+        "args": [
+          {
+            "name": "volume_up",
+            "type": "range",
+            "min": 1,
+            "max": 20,
+            "label": "%"
+          }
+        ]
       }
     ]
   }
