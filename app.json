@@ -28,6 +28,9 @@
     "large": "./assets/images/large.jpg",
     "small": "./assets/images/small.jpg"
   },
+  "permissions": [
+    "homey:manager:speech-output"
+  ],
   "dependencies": {
     "mdns-js": "*"
   },
@@ -116,6 +119,13 @@
             "label": "%"
           }
         ]
+      },
+      {
+        "id": "say_nowplaying",
+        "title": {
+          "en": "Say current song",
+          "nl": "Zeg huidig nummer "
+        }
       }
     ]
   }

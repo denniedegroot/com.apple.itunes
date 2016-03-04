@@ -1,4 +1,7 @@
 {
+  "actions": {
+    "say_nowplaying": "Speelt nu ${song} van ${artist}"
+  },
   "settings": {
     "title": "iTunes instellingen",
     "intro": "Voordat Homey iTunes kan besturen moet deze gepaired worden. Volg de pairing handleiding voor instructies.",

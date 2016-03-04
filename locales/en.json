@@ -1,4 +1,7 @@
 {
+  "actions": {
+    "say_nowplaying": "Playing ${song} by ${artist}"
+  },
   "settings": {
     "title": "iTunes settings",
     "intro": "Before Homey can control iTunes we need to pair it with iTunes. Read the manual for instructions.",
