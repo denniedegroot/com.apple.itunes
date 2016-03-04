@@ -1,7 +1,7 @@
 "use strict";
 
-var pair = require('./source/pairing.js');
-var DAAP = require('./source/daap.js');
+var pair = require('./lib/pairing.js');
+var DAAP = require('./lib/daap.js');
 
 var daap = new DAAP();
 var settings = {};
