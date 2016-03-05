@@ -29,12 +29,59 @@
     "small": "./assets/images/small.jpg"
   },
   "permissions": [
+    "homey:manager:speech-input",
     "homey:manager:speech-output"
   ],
   "dependencies": {
     "mdns-js": "*"
   },
   "media": [ "play", "pause", "search" ],
+  "speech": [
+    {
+      "id": "itunes",
+      "importance": 1,
+      "triggers": {
+        "en": [
+          "itunes"
+        ],
+        "nl": [
+          "itunes"
+        ]
+      }
+    },
+    {
+      "id": "pause",
+      "importance": false,
+      "triggers": {
+        "en": [ "pause", "stop" ],
+        "nl": [ "pauzeer", "stop" ]
+      }
+    },
+    {
+      "id": "play",
+      "importance": false,
+      "triggers": {
+        "en": [ "play", "start" ],
+        "nl": [ "afspelen", "speel af", "start" ]
+      }
+    },
+    {
+      "id": "nowplaying",
+      "importance": false,
+      "triggers": {
+        "en": [ "current song", "current itunes song",
+                "what song is playing", "what itunes song is playing",
+                "what song is this", "what itunes song is this",
+                "what is the name of this song", "what is the name of this itunes song"
+        ],
+        "nl": [ "huidig nummer", "huidig itunes nummer",
+                "welk nummer speelt nu af", "welk itunes nummer speelt nu af",
+                "welk nummer is dit", "welk itunes nummer is dit",
+                "hoe heet dit nummer", "hoe heet dit itunes nummer"
+        ]
+      }
+    }
+  ],
   "flow": {
     "actions": [
       {
