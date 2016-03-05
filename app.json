@@ -66,6 +66,34 @@
       }
     },
     {
+      "id": "previous",
+      "importance": false,
+      "triggers": {
+        "en": [ "previous" ],
+        "nl": [ "vorig", "vorige" ]
+      }
+    },
+    {
+      "id": "next",
+      "importance": false,
+      "triggers": {
+        "en": [ "next" ],
+        "nl": [ "volgend", "volgende" ]
+      }
+    },
+    {
+      "id": "volume",
+      "importance": false,
+      "triggers": {
+        "en": [
+          "volume"
+        ],
+        "nl": [
+          "volume"
+        ]
+      }
+    },
+    {
       "id": "nowplaying",
       "importance": false,
       "triggers": {
