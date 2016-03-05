@@ -61,8 +61,8 @@
       "id": "play",
       "importance": false,
       "triggers": {
-        "en": [ "play", "start" ],
-        "nl": [ "afspelen", "speel af", "start" ]
+        "en": [ "play", "start", "continue" ],
+        "nl": [ "afspelen", "speel af", "start", "hervat" ]
       }
     },
     {
@@ -99,11 +99,13 @@
       "triggers": {
         "en": [ "current song", "current itunes song",
                 "what song is playing", "what itunes song is playing",
+                "what song is currently playing", "what itunes song is currently playing",
                 "what song is this", "what itunes song is this",
                 "what is the name of this song", "what is the name of this itunes song"
         ],
         "nl": [ "huidig nummer", "huidig itunes nummer",
                 "welk nummer speelt nu af", "welk itunes nummer speelt nu af",
+                "welk nummer speelt momenteel af", "welk itunes nummer speelt momenteel af",
                 "welk nummer is dit", "welk itunes nummer is dit",
                 "hoe heet dit nummer", "hoe heet dit itunes nummer"
         ]
