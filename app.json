@@ -203,6 +203,13 @@
           "en": "Say current song",
           "nl": "Zeg huidig nummer "
         }
+      },
+      {
+        "id": "say_currentrating",
+        "title": {
+          "en": "Say current song rating",
+          "nl": "Zeg huidige nummer beoordeling"
+        }
       }
     ]
   }

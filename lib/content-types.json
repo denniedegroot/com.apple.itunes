@@ -580,7 +580,7 @@
   {
     "code": "canp",
     "name": "dacp.nowplayingids",
-    "type": "short"
+    "type": "int"
   },
   {
     "code": "cant",

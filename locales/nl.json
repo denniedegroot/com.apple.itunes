@@ -1,6 +1,7 @@
 {
   "actions": {
-    "say_nowplaying": "Speelt nu ${song} van ${artist}"
+    "say_nowplaying": "Speelt nu ${song} van ${artist}",
+    "say_stars": "${stars} sterren"
   },
   "settings": {
     "title": "iTunes instellingen",
