@@ -113,6 +113,198 @@
     }
   ],
   "flow": {
+    "triggers": [
+      {
+        "id": "song_changed",
+        "title": {
+          "en": "Song changed",
+          "nl": "Nummer is veranderd"
+        },
+        "tokens": [
+          {
+            "name": "name",
+            "title": {
+              "en": "name",
+              "nl": "naam"
+            },
+            "example": {
+              "en": "We're All We Need (feat. Zoe Johnston)",
+              "nl": "We're All We Need (feat. Zoe Johnston)"
+            }
+          },
+          {
+            "name": "artist",
+            "title": {
+              "en": "artist",
+              "nl": "artiest"
+            },
+            "example": {
+              "en": "Above & Beyond",
+              "nl": "Above & Beyond"
+            }
+          },
+          {
+            "name": "album",
+            "title": {
+              "en": "album",
+              "nl": "album"
+            },
+            "example": {
+              "en": "We Are All We Need",
+              "nl": "We Are All We Need"
+            }
+          },
+          {
+            "name": "genre",
+            "title": {
+              "en": "genre",
+              "nl": "genre"
+            },
+            "example": {
+              "en": "Dance",
+              "nl": "Dance"
+            }
+          },
+          {
+            "name": "stars",
+            "title": {
+              "en": "stars",
+              "nl": "sterren"
+            },
+            "example": {
+              "en": "5",
+              "nl": "5"
+            }
+          }
+        ]
+      },{
+        "id": "song_paused",
+        "title": {
+          "en": "Song paused",
+          "nl": "Nummer gepauzeerd"
+        },
+        "tokens": [
+          {
+            "name": "name",
+            "title": {
+              "en": "name",
+              "nl": "naam"
+            },
+            "example": {
+              "en": "We're All We Need (feat. Zoe Johnston)",
+              "nl": "We're All We Need (feat. Zoe Johnston)"
+            }
+          },
+          {
+            "name": "artist",
+            "title": {
+              "en": "artist",
+              "nl": "artiest"
+            },
+            "example": {
+              "en": "Above & Beyond",
+              "nl": "Above & Beyond"
+            }
+          },
+          {
+            "name": "album",
+            "title": {
+              "en": "album",
+              "nl": "album"
+            },
+            "example": {
+              "en": "We Are All We Need",
+              "nl": "We Are All We Need"
+            }
+          },
+          {
+            "name": "genre",
+            "title": {
+              "en": "genre",
+              "nl": "genre"
+            },
+            "example": {
+              "en": "Dance",
+              "nl": "Dance"
+            }
+          },
+          {
+            "name": "stars",
+            "title": {
+              "en": "stars",
+              "nl": "sterren"
+            },
+            "example": {
+              "en": "5",
+              "nl": "5"
+            }
+          }
+        ]
+      },{
+        "id": "song_resumed",
+        "title": {
+          "en": "Song resumed",
+          "nl": "Nummer afspelen hervat"
+        },
+        "tokens": [
+          {
+            "name": "name",
+            "title": {
+              "en": "name",
+              "nl": "naam"
+            },
+            "example": {
+              "en": "We're All We Need (feat. Zoe Johnston)",
+              "nl": "We're All We Need (feat. Zoe Johnston)"
+            }
+          },
+          {
+            "name": "artist",
+            "title": {
+              "en": "artist",
+              "nl": "artiest"
+            },
+            "example": {
+              "en": "Above & Beyond",
+              "nl": "Above & Beyond"
+            }
+          },
+          {
+            "name": "album",
+            "title": {
+              "en": "album",
+              "nl": "album"
+            },
+            "example": {
+              "en": "We Are All We Need",
+              "nl": "We Are All We Need"
+            }
+          },
+          {
+            "name": "genre",
+            "title": {
+              "en": "genre",
+              "nl": "genre"
+            },
+            "example": {
+              "en": "Dance",
+              "nl": "Dance"
+            }
+          },
+          {
+            "name": "stars",
+            "title": {
+              "en": "stars",
+              "nl": "sterren"
+            },
+            "example": {
+              "en": "5",
+              "nl": "5"
+            }
+          }
+        ]
+      }
+    ],
     "actions": [
       {
         "id": "pause",
