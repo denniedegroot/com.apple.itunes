@@ -16,6 +16,7 @@ var sessioninfo = {};
 function init() {
     settings.init(daap, config, function() {
         session.init(daap, sessioninfo);
+        //console.log(daap);
 
         media.init(daap, sessioninfo);
         controls.init(daap, sessioninfo);
