@@ -35,7 +35,7 @@
   "dependencies": {
     "mdns-js": "*"
   },
-  "media": [ "play", "pause", "search" ],
+  "media": ["play", "pause", "search"],
   "speech": [
     {
       "id": "itunes",
@@ -53,32 +53,32 @@
       "id": "pause",
       "importance": false,
       "triggers": {
-        "en": [ "pause", "stop" ],
-        "nl": [ "pauzeer", "stop" ]
+        "en": ["pause", "stop"],
+        "nl": ["pauzeer", "stop"]
       }
     },
     {
       "id": "play",
       "importance": false,
       "triggers": {
-        "en": [ "play", "start", "continue" ],
-        "nl": [ "afspelen", "speel af", "start", "hervat" ]
+        "en": ["play", "start", "continue"],
+        "nl": ["afspelen", "speel af", "start", "hervat"]
       }
     },
     {
       "id": "previous",
       "importance": false,
       "triggers": {
-        "en": [ "previous" ],
-        "nl": [ "vorig", "vorige" ]
+        "en": ["previous"],
+        "nl": ["vorig", "vorige"]
       }
     },
     {
       "id": "next",
       "importance": false,
       "triggers": {
-        "en": [ "next" ],
-        "nl": [ "volgend", "volgende" ]
+        "en": ["next"],
+        "nl": ["volgend", "volgende"]
       }
     },
     {
@@ -97,17 +97,19 @@
       "id": "nowplaying",
       "importance": false,
       "triggers": {
-        "en": [ "current song", "current itunes song",
-                "what song is playing", "what itunes song is playing",
-                "what song is currently playing", "what itunes song is currently playing",
-                "what song is this", "what itunes song is this",
-                "what is the name of this song", "what is the name of this itunes song"
+        "en": [
+          "current song", "current itunes song",
+          "what song is playing", "what itunes song is playing",
+          "what song is currently playing", "what itunes song is currently playing",
+          "what song is this", "what itunes song is this",
+          "what is the name of this song", "what is the name of this itunes song"
         ],
-        "nl": [ "huidig nummer", "huidig itunes nummer",
-                "welk nummer speelt nu af", "welk itunes nummer speelt nu af",
-                "welk nummer speelt momenteel af", "welk itunes nummer speelt momenteel af",
-                "welk nummer is dit", "welk itunes nummer is dit",
-                "hoe heet dit nummer", "hoe heet dit itunes nummer"
+        "nl": [
+          "huidig nummer", "huidig itunes nummer",
+          "welk nummer speelt nu af", "welk itunes nummer speelt nu af",
+          "welk nummer speelt momenteel af", "welk itunes nummer speelt momenteel af",
+          "welk nummer is dit", "welk itunes nummer is dit",
+          "hoe heet dit nummer", "hoe heet dit itunes nummer"
         ]
       }
     }
@@ -177,7 +179,7 @@
             }
           }
         ]
-      },{
+      }, {
         "id": "song_paused",
         "title": {
           "en": "Song paused",
@@ -240,7 +242,7 @@
             }
           }
         ]
-      },{
+      }, {
         "id": "song_resumed",
         "title": {
           "en": "Song resumed",
@@ -344,8 +346,8 @@
       {
         "id": "volume",
         "title": {
-            "en": "Volume",
-            "nl": "Volume"
+          "en": "Volume",
+          "nl": "Volume"
         },
         "args": [
           {
