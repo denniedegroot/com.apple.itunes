@@ -1,11 +1,2 @@
-# OSX generated
 .DS_Store
-
-# IntelliJ IDE
 .idea/
-
-# Homey mocking
-node_modules/nodemock/
-app-mock.js
-lib/mock-homey.js
-

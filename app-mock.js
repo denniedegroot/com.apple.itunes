@@ -2,6 +2,15 @@
 
 require('./lib/mock-homey.js'); // Mocks the global Homey object.
 var daapPairCode = 'yourpaircode'; // Change to your itunes paircode
+function test() {
+    setTimeout(function() {
+        // Your test code here
+
+    }, 2000);
+}
+
+// Start of original app.js content >>
+"use strict";
 
 var DAAP = require('./lib/daap.js');
 
@@ -18,7 +27,7 @@ var sessioninfo = {};
 
 function init() {
     settings.init(daap, config, function() {
-        setPairingSettings(daap);
+        setPairingSettings(daap); // << ==== Changed from original
         session.init(daap, sessioninfo);
 
         media.init(daap, sessioninfo);
@@ -28,25 +37,20 @@ function init() {
     });
 }
 
+module.exports.init = init;
+// << END of original app.js content
+
 init();
 test();
 
-function test(){
-    setTimeout(function(){
-        var pair = require('./lib/pairing.js');
-        // Your test code here
-
-    }, 2000);
-}
-
-function setPairingSettings(daap){
+function setPairingSettings(daap) {
     daap.pairingCode = daapPairCode;
     doPairIfNeeded(daap);
 }
 
-/* Start pairing when no ip or paircode where set */
-function doPairIfNeeded(daap){
-    if(daap.pairingCode == 'yourpaircode'){
+/* Start pairing when no paircode is set */
+function doPairIfNeeded(daap) {
+    if (daap.pairingCode == 'yourpaircode' || daap.pairingCode == '') {
         var pairing = require('./lib/pairing.js');
 
         Homey.log('Starting pairing process');
@@ -58,7 +62,3 @@ function doPairIfNeeded(daap){
         });
     }
 }
-
-module.exports.init = init;
-
-
