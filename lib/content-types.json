@@ -5,6 +5,16 @@
     "type": "list"
   },
   {
+    "code": "agal",
+    "name": "daap.albumgrouping",
+    "type": "list"
+  },
+  {
+    "code": "cacr",
+    "name": "cue.xxx",
+    "type": "list"
+  },
+  {
     "code": "abar",
     "name": "daap.browseartistlisting",
     "type": "list"

@@ -20,7 +20,7 @@
     "developers": [
       {
         "name": "Maarten Jansen",
-        "email": "m.jansen.email@gmail.com"
+        "email": "mjansenemail@gmail.com"
       }
     ]
   },
@@ -402,6 +402,23 @@
           "en": "Say current song rating",
           "nl": "Zeg huidige nummer beoordeling"
         }
+      },
+      {
+        "id": "play_artist",
+        "title": {
+          "en": "Play music from artist",
+          "nl": "Speel muziek van artiest"
+        },
+        "args": [
+          {
+            "name": "artist",
+            "type": "text",
+            "placeholder": {
+              "en": "Artist name...",
+              "nl": "Artiest naam..."
+            }
+          }
+        ]
       }
     ]
   }
