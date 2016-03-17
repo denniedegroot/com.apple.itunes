@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var DAAP = require('./lib/daap.js');
 
@@ -14,7 +14,7 @@ var daap = new DAAP();
 var sessioninfo = {};
 
 function init() {
-    settings.init(daap, config, function() {
+    settings.init(daap, config, function () {
         session.init(daap, sessioninfo);
 
         media.init(daap, sessioninfo);

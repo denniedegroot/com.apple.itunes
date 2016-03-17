@@ -37,14 +37,16 @@
         var settings = {};
 
         function onPairing() {
-            if (settings.paircode != undefined){
-                if (!confirm(__('settings.pairing.renew')))
+            if (settings.paircode != undefined) {
+                if (!confirm(__('settings.pairing.renew'))) {
                     return;
+                }
             }
 
-            Homey.set('settings', {}, function(err) {
-                if(err)
+            Homey.set('settings', {}, function (err) {
+                if (err) {
                     console.log(err);
+                }
 
                 document.getElementById('settings-address').value = __('settings.pairing.empty');
                 document.getElementById('settings-pairing-code').value = __('settings.pairing.empty');
@@ -54,7 +56,7 @@
         }
 
         function onHomeyReady() {
-            Homey.on('settings_changed', function(data) {
+            Homey.on('settings_changed', function (data) {
                 settings = data;
 
                 if (settings != undefined) {
@@ -65,7 +67,7 @@
                 }
             });
 
-            Homey.get('settings', function(err, data) {
+            Homey.get('settings', function (err, data) {
                 if (data != undefined) {
                     settings = data;
                     document.getElementById('settings-address').value = settings.host;
