@@ -1,11 +1,12 @@
 "use strict";
 
 require('./lib/mock-homey.js'); // Mocks the global Homey object.
+
 var daapPairCode = 'yourpaircode'; // Change to your itunes paircode
 function test() {
     setTimeout(function() {
         // Your test code here
-
+        
     }, 2000);
 }
 
