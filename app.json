@@ -46,10 +46,12 @@
             "importance": 1,
             "triggers": {
                 "en": [
-                    "itunes"
+                    "itunes",
+                    "i tunes"
                 ],
                 "nl": [
-                    "itunes"
+                    "itunes",
+                    "i tunes"
                 ]
             }
         },
