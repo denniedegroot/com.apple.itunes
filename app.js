@@ -9,12 +9,11 @@ var session = require('./lib/session.js');
 var speech = require('./lib/speech-input.js');
 var triggers = require('./lib/triggers.js');
 
-var config = {};
 var daap = new DAAP();
 var sessioninfo = {};
 
 function init() {
-    settings.init(daap, config, function () {
+    settings.init(daap, function () {
         session.init(daap, sessioninfo);
 
         media.init(daap, sessioninfo);

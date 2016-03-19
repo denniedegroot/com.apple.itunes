@@ -30,6 +30,17 @@
         <button id="settings-pairing-button" data-i18n="settings.pairing.start" onclick="onPairing()"></button>
     </fieldset>
 
+    <fieldset>
+        <legend data-i18n="settings.header"></legend>
+
+        <div class="field">
+            <input id="settings-enable-speech" type="checkbox" />
+            <label for="settings-enable-speech" data-i18n="settings.enable_speech"></label>
+        </div>
+
+        <button id="settings-save-button" data-i18n="settings.save" onclick="onSaveSettings()"></button>
+    </fieldset>
+
     <h1 data-i18n="settings.manual.header"></h1>
     <p data-i18n="settings.manual.manual"></p>
 
@@ -43,7 +54,9 @@
                 }
             }
 
-            Homey.set('settings', {}, function (err) {
+            settings.pairstart = true;
+
+            Homey.set('settings', settings, function (err) {
                 if (err) {
                     console.log(err);
                 }
@@ -52,6 +65,16 @@
                 document.getElementById('settings-pairing-code').value = __('settings.pairing.empty');
                 document.getElementById('settings-pairing-button').disabled = true;
                 document.getElementById('settings-pairing-button').innerHTML = __('settings.pairing.busy');
+            });
+        }
+
+        function onSaveSettings() {
+            settings.speech_enabled = document.getElementById('settings-enable-speech').checked;
+
+            Homey.set('settings', settings, function (err) {
+                if (err) {
+                    console.log(err);
+                }
             });
         }
 
@@ -64,15 +87,19 @@
                     document.getElementById('settings-pairing-code').value = settings.paircode;
                     document.getElementById('settings-pairing-button').disabled = false;
                     document.getElementById('settings-pairing-button').innerHTML = __('settings.pairing.start');
+                    document.getElementById('settings-enable-speech').checked = settings.speech_enabled;
                 }
             });
 
             Homey.get('settings', function (err, data) {
-                if (data != undefined) {
-                    settings = data;
-                    document.getElementById('settings-address').value = settings.host;
-                    document.getElementById('settings-pairing-code').value = settings.paircode;
+                if (err || data == undefined) {
+                    console.log(err);
                 }
+
+                settings = data;
+                document.getElementById('settings-address').value = settings.host;
+                document.getElementById('settings-pairing-code').value = settings.paircode;
+                document.getElementById('settings-enable-speech').checked = settings.speech_enabled;
 
                 Homey.ready()
             });

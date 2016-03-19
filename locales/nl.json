@@ -8,6 +8,8 @@
         "title": "iTunes instellingen",
         "intro": "Voordat Homey iTunes kan besturen moet deze gepaired worden. Volg de pairing handleiding voor instructies.",
         "header": "iTunes instellingen",
+        "enable_speech": "Luister naar spraakopdrachten",
+        "save": "Instellingen opslaan",
         "manual": {
             "header": "Handleiding pairing",
             "manual": "Voordat Homey iTunes kan besturen moet deze gepaired worden. Klik op de \"Vraag pairing code aan\" knop om het pairing proces te starten. Na het klikken op de knop verschijnt er een <img src=\"/app/com.apple.itunes/assets/images/itunes-remote-icon.png\" alt=\"itunes-remote-icon\" height=\"20\"> icoon in iTunes welke aangeeft dat Homey wilt pairen. Klik op dit <img src=\"/app/com.apple.itunes/assets/images/itunes-remote-icon.png\" alt=\"itunes-remote-icon\" height=\"20\"> icoon en iTunes zal om een pincode vragen, het maakt niet uit wat u hier invult. Na het invullen van de pincode is het pairing proces afgerond.<br><br><a href=\"https://support.apple.com/kb/PH12157\" target=\"_blank\">Officiële Apple Handleiding</a>"
