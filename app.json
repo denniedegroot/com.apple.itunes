@@ -350,6 +350,38 @@
                 ]
             }
         ],
+        "conditions": [
+            {
+                "id": "song_playing",
+                "title": {
+                    "en": "Song !{{is|isn't}} playing",
+                    "nl": "Nummer speelt !{{|niet}} af"
+                }
+            },
+            {
+                "id": "song_paused",
+                "title": {
+                    "en": "Song !{{is|isn't}} paused",
+                    "nl": "Nummer is !{{|niet}} gepauzeerd"
+                }
+            },
+            {
+                "id": "volume",
+                "title": {
+                    "en": "Volume !{{is|isn't}} ",
+                    "nl": "Volume is !{{|niet}} "
+                },
+                "args": [
+                    {
+                        "name": "volume_percent",
+                        "type": "range",
+                        "min": 0,
+                        "max": 100,
+                        "label": "%"
+                    }
+                ]
+            }
+        ],
         "actions": [
             {
                 "id": "pause",
