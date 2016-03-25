@@ -496,6 +496,39 @@
                         }
                     }
                 ]
+            },
+            {
+                "id": "play_song",
+                "title": {
+                    "en": "Play song",
+                    "nl": "Speel nummer"
+                },
+                "args": [
+                    {
+                        "name": "library",
+                        "type": "autocomplete",
+                        "placeholder": {
+                            "en": "Library",
+                            "nl": "Bibliotheek"
+                        }
+                    },
+                    {
+                        "name": "artist",
+                        "type": "autocomplete",
+                        "placeholder": {
+                            "en": "Artist",
+                            "nl": "Artiest"
+                        }
+                    },
+                    {
+                        "name": "song",
+                        "type": "autocomplete",
+                        "placeholder": {
+                            "en": "Song",
+                            "nl": "Nummer"
+                        }
+                    }
+                ]
             }
         ]
     }

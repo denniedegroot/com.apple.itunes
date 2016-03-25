@@ -2,7 +2,10 @@
     "actions": {
         "say_nowplaying": "Playing ${song} by ${artist}",
         "say_stars": "${stars} stars",
-        "say_playartist": "Playing songs from ${artist}"
+        "say_playartist": "Playing songs from ${artist}",
+        "play_song": {
+            "library_error": "Select a library"
+        }
     },
     "settings": {
         "title": "iTunes settings",
@@ -23,5 +26,6 @@
             "busy": "Pairing in progress",
             "renew": "Are you sure you want to request a new pairing code?"
         }
-    }
+    },
+    "communication_error": "No items found"
 }

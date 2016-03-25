@@ -2,7 +2,10 @@
     "actions": {
         "say_nowplaying": "Speelt nu ${song} van ${artist}",
         "say_stars": "${stars} sterren",
-        "say_playartist": "Speelt nu nummers van ${artist} af"
+        "say_playartist": "Speelt nu nummers van ${artist} af",
+        "play_song": {
+            "library_error": "Selecteer een bibliotheek"
+        }
     },
     "settings": {
         "title": "iTunes instellingen",
@@ -23,5 +26,6 @@
             "busy": "Pairing is bezig",
             "renew": "Weet u zeker dat u een nieuwe pairing code wilt aanvragen?"
         }
-    }
+    },
+    "communication_error": "Geen items gevonden"
 }
