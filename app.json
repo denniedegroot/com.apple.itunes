@@ -488,11 +488,19 @@
                 },
                 "args": [
                     {
-                        "name": "artist",
-                        "type": "text",
+                        "name": "library",
+                        "type": "autocomplete",
                         "placeholder": {
-                            "en": "Artist name...",
-                            "nl": "Artiest naam..."
+                            "en": "Library",
+                            "nl": "Bibliotheek"
+                        }
+                    },
+                    {
+                        "name": "artist",
+                        "type": "autocomplete",
+                        "placeholder": {
+                            "en": "Artist",
+                            "nl": "Artiest"
                         }
                     }
                 ]
