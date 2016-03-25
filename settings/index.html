@@ -34,8 +34,13 @@
         <legend data-i18n="settings.header"></legend>
 
         <div class="field">
-            <input id="settings-enable-speech" type="checkbox" />
-            <label for="settings-enable-speech" data-i18n="settings.enable_speech"></label>
+            <input id="settings-speech-enable" type="checkbox" />
+            <label for="settings-speech-enable" data-i18n="settings.speech_enable"></label>
+        </div>
+
+        <div class="field">
+            <input id="settings-cache-enable" type="checkbox" />
+            <label for="settings-cache-enable" data-i18n="settings.cache_enable"></label>
         </div>
 
         <button id="settings-save-button" data-i18n="settings.save" onclick="onSaveSettings()"></button>
@@ -69,7 +74,8 @@
         }
 
         function onSaveSettings() {
-            settings.speech_enabled = document.getElementById('settings-enable-speech').checked;
+            settings.speech_enabled = document.getElementById('settings-speech-enable').checked;
+            settings.cache_enabled = document.getElementById('settings-cache-enable').checked;
 
             Homey.set('settings', settings, function (err) {
                 if (err) {
@@ -87,7 +93,8 @@
                     document.getElementById('settings-pairing-code').value = settings.paircode;
                     document.getElementById('settings-pairing-button').disabled = false;
                     document.getElementById('settings-pairing-button').innerHTML = __('settings.pairing.start');
-                    document.getElementById('settings-enable-speech').checked = settings.speech_enabled;
+                    document.getElementById('settings-speech-enable').checked = settings.speech_enabled;
+                    document.getElementById('settings-cache=enable').checked = settings.cache_enabled;
                 }
             });
 
@@ -99,7 +106,8 @@
                 settings = data;
                 document.getElementById('settings-address').value = settings.host;
                 document.getElementById('settings-pairing-code').value = settings.paircode;
-                document.getElementById('settings-enable-speech').checked = settings.speech_enabled;
+                document.getElementById('settings-speech-enable').checked = settings.speech_enabled;
+                document.getElementById('settings-cache-enable').checked = settings.cache_enabled;
 
                 Homey.ready()
             });

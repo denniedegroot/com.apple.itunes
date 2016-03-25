@@ -8,7 +8,8 @@
         "title": "iTunes settings",
         "intro": "Before Homey can control iTunes we need to pair it with iTunes. Read the manual for instructions.",
         "header": "iTunes settings",
-        "enable_speech": "Listen to speech commands",
+        "speech_enable": "Listen to speech commands",
+        "cache_enable": "Cache library items",
         "save": "Save settings",
         "manual": {
             "header": "Pairing manual",
@@ -24,6 +25,5 @@
             "renew": "Are you sure you want to request a new pairing code?"
         }
     },
-    "library_error": "Select a library",
-    "communication_error": "No items found"
+    "library_error": "Select a library..."
 }

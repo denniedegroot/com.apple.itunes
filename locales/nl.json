@@ -8,7 +8,8 @@
         "title": "iTunes instellingen",
         "intro": "Voordat Homey iTunes kan besturen moet deze gepaired worden. Volg de pairing handleiding voor instructies.",
         "header": "iTunes instellingen",
-        "enable_speech": "Luister naar spraakopdrachten",
+        "speech_enable": "Luister naar spraakopdrachten",
+        "cache_enable": "Cache bibliotheek items",
         "save": "Instellingen opslaan",
         "manual": {
             "header": "Handleiding pairing",
@@ -24,6 +25,5 @@
             "renew": "Weet u zeker dat u een nieuwe pairing code wilt aanvragen?"
         }
     },
-    "library_error": "Selecteer een bibliotheek",
-    "communication_error": "Geen items gevonden"
+    "library_error": "Selecteer een bibliotheek..."
 }
