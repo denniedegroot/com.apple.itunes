@@ -380,6 +380,83 @@
                         "label": "%"
                     }
                 ]
+            },
+            {
+                "id": "current_stars",
+                "title": {
+                    "en": "Current song rating !{{is|isn't}} ",
+                    "nl": "Huidig nummer beoordeling is !{{|niet}} "
+                },
+                "args": [
+                    {
+                        "name": "stars",
+                        "type": "number",
+                        "min": 0,
+                        "max": 5,
+                        "placeholder": {
+                            "en": "Stars",
+                            "nl": "Sterren"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "current_song",
+                "title": {
+                    "en": "Current song !{{is|isn't}}",
+                    "nl": "Huidig nummer is !{{|niet}}"
+                },
+                "args": [
+                    {
+                        "name": "library",
+                        "type": "autocomplete",
+                        "placeholder": {
+                            "en": "Library",
+                            "nl": "Bibliotheek"
+                        }
+                    },
+                    {
+                        "name": "artist",
+                        "type": "autocomplete",
+                        "placeholder": {
+                            "en": "Artist",
+                            "nl": "Artiest"
+                        }
+                    },
+                    {
+                        "name": "song",
+                        "type": "autocomplete",
+                        "placeholder": {
+                            "en": "Song",
+                            "nl": "Nummer"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "current_artist",
+                "title": {
+                    "en": "Current artist !{{is|isn't}}",
+                    "nl": "Huidige artiest is !{{|niet}}"
+                },
+                "args": [
+                    {
+                        "name": "library",
+                        "type": "autocomplete",
+                        "placeholder": {
+                            "en": "Library",
+                            "nl": "Bibliotheek"
+                        }
+                    },
+                    {
+                        "name": "artist",
+                        "type": "autocomplete",
+                        "placeholder": {
+                            "en": "Artist",
+                            "nl": "Artiest"
+                        }
+                    }
+                ]
             }
         ],
         "actions": [
