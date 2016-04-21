@@ -1,8 +1,8 @@
 {
     "actions": {
-        "say_nowplaying": "Playing ${song} by ${artist}",
-        "say_stars": "${stars} stars",
-        "say_playartist": "Playing songs from ${artist}"
+        "say_nowplaying": "Playing __song__ by __artist__",
+        "say_stars": "__stars__ stars",
+        "say_playartist": "Playing songs from __artist__"
     },
     "settings": {
         "title": "iTunes settings",
