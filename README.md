@@ -7,6 +7,7 @@ This app will connect Homey with iTunes to control your music.
 - Change the volume
 - Homey can say what song is playing
 - Homey can say the user rating of a song
+- Play a song
 - Create and play a playlist of your favorite artist
 - Trigger on song changed, paused, resumed
 - Speech input support
