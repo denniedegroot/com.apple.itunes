@@ -1,408 +1,620 @@
 {
-  "id": "com.apple.itunes",
-  "version": "1.1.0",
-  "compatibility": "0.x || 1.x",
-  "category": "music",
-  "name": {
-    "en": "iTunes",
-    "nl": "iTunes"
-  },
-  "description": {
-    "en": "Give Homey the ability to control iTunes",
-    "nl": "Laat Homey iTunes besturen"
-  },
-  "author": {
-    "name": "Dennie de Groot",
-    "email": "mail@denniedegroot.nl",
-    "website": "https://denniedegroot.nl"
-  },
-  "contributors": {
-    "developers": [
-      {
-        "name": "Maarten Jansen",
-        "email": "m.jansen.email@gmail.com"
-      }
-    ]
-  },
-  "images": {
-    "large": "./assets/images/large.jpg",
-    "small": "./assets/images/small.jpg"
-  },
-  "permissions": [
-    "homey:manager:speech-input",
-    "homey:manager:speech-output"
-  ],
-  "dependencies": {
-    "mdns-js": "*"
-  },
-  "media": [ "play", "pause", "search" ],
-  "speech": [
-    {
-      "id": "itunes",
-      "importance": 1,
-      "triggers": {
-        "en": [
-          "itunes"
-        ],
-        "nl": [
-          "itunes"
-        ]
-      }
+    "id": "com.apple.itunes",
+    "version": "1.3.0",
+    "compatibility": "0.x || 1.x",
+    "category": "music",
+    "name": {
+        "en": "iTunes",
+        "nl": "iTunes"
     },
-    {
-      "id": "pause",
-      "importance": false,
-      "triggers": {
-        "en": [ "pause", "stop" ],
-        "nl": [ "pauzeer", "stop" ]
-      }
+    "description": {
+        "en": "Give Homey the ability to control iTunes",
+        "nl": "Laat Homey iTunes besturen"
     },
-    {
-      "id": "play",
-      "importance": false,
-      "triggers": {
-        "en": [ "play", "start", "continue" ],
-        "nl": [ "afspelen", "speel af", "start", "hervat" ]
-      }
+    "author": {
+        "name": "Dennie de Groot",
+        "email": "mail@denniedegroot.nl",
+        "website": "https://denniedegroot.nl"
     },
-    {
-      "id": "previous",
-      "importance": false,
-      "triggers": {
-        "en": [ "previous" ],
-        "nl": [ "vorig", "vorige" ]
-      }
+    "contributors": {
+        "developers": [
+            {
+                "name": "Maarten Jansen",
+                "email": "mjansenemail@gmail.com"
+            }
+        ]
     },
-    {
-      "id": "next",
-      "importance": false,
-      "triggers": {
-        "en": [ "next" ],
-        "nl": [ "volgend", "volgende" ]
-      }
+    "images": {
+        "large": "./assets/images/large.jpg",
+        "small": "./assets/images/small.jpg"
     },
-    {
-      "id": "volume",
-      "importance": false,
-      "triggers": {
-        "en": [
-          "volume"
-        ],
-        "nl": [
-          "volume"
-        ]
-      }
-    },
-    {
-      "id": "nowplaying",
-      "importance": false,
-      "triggers": {
-        "en": [ "current song", "current itunes song",
-                "what song is playing", "what itunes song is playing",
-                "what song is currently playing", "what itunes song is currently playing",
-                "what song is this", "what itunes song is this",
-                "what is the name of this song", "what is the name of this itunes song"
-        ],
-        "nl": [ "huidig nummer", "huidig itunes nummer",
-                "welk nummer speelt nu af", "welk itunes nummer speelt nu af",
-                "welk nummer speelt momenteel af", "welk itunes nummer speelt momenteel af",
-                "welk nummer is dit", "welk itunes nummer is dit",
-                "hoe heet dit nummer", "hoe heet dit itunes nummer"
-        ]
-      }
-    }
-  ],
-  "flow": {
-    "triggers": [
-      {
-        "id": "song_changed",
-        "title": {
-          "en": "Song changed",
-          "nl": "Nummer is veranderd"
-        },
-        "tokens": [
-          {
-            "name": "name",
-            "title": {
-              "en": "name",
-              "nl": "naam"
-            },
-            "example": {
-              "en": "We're All We Need (feat. Zoe Johnston)",
-              "nl": "We're All We Need (feat. Zoe Johnston)"
-            }
-          },
-          {
-            "name": "artist",
-            "title": {
-              "en": "artist",
-              "nl": "artiest"
-            },
-            "example": {
-              "en": "Above & Beyond",
-              "nl": "Above & Beyond"
-            }
-          },
-          {
-            "name": "album",
-            "title": {
-              "en": "album",
-              "nl": "album"
-            },
-            "example": {
-              "en": "We Are All We Need",
-              "nl": "We Are All We Need"
-            }
-          },
-          {
-            "name": "genre",
-            "title": {
-              "en": "genre",
-              "nl": "genre"
-            },
-            "example": {
-              "en": "Dance",
-              "nl": "Dance"
-            }
-          },
-          {
-            "name": "stars",
-            "title": {
-              "en": "stars",
-              "nl": "sterren"
-            },
-            "example": {
-              "en": "5",
-              "nl": "5"
-            }
-          }
-        ]
-      },{
-        "id": "song_paused",
-        "title": {
-          "en": "Song paused",
-          "nl": "Nummer gepauzeerd"
-        },
-        "tokens": [
-          {
-            "name": "name",
-            "title": {
-              "en": "name",
-              "nl": "naam"
-            },
-            "example": {
-              "en": "We're All We Need (feat. Zoe Johnston)",
-              "nl": "We're All We Need (feat. Zoe Johnston)"
-            }
-          },
-          {
-            "name": "artist",
-            "title": {
-              "en": "artist",
-              "nl": "artiest"
-            },
-            "example": {
-              "en": "Above & Beyond",
-              "nl": "Above & Beyond"
-            }
-          },
-          {
-            "name": "album",
-            "title": {
-              "en": "album",
-              "nl": "album"
-            },
-            "example": {
-              "en": "We Are All We Need",
-              "nl": "We Are All We Need"
-            }
-          },
-          {
-            "name": "genre",
-            "title": {
-              "en": "genre",
-              "nl": "genre"
-            },
-            "example": {
-              "en": "Dance",
-              "nl": "Dance"
-            }
-          },
-          {
-            "name": "stars",
-            "title": {
-              "en": "stars",
-              "nl": "sterren"
-            },
-            "example": {
-              "en": "5",
-              "nl": "5"
-            }
-          }
-        ]
-      },{
-        "id": "song_resumed",
-        "title": {
-          "en": "Song resumed",
-          "nl": "Nummer afspelen hervat"
-        },
-        "tokens": [
-          {
-            "name": "name",
-            "title": {
-              "en": "name",
-              "nl": "naam"
-            },
-            "example": {
-              "en": "We're All We Need (feat. Zoe Johnston)",
-              "nl": "We're All We Need (feat. Zoe Johnston)"
-            }
-          },
-          {
-            "name": "artist",
-            "title": {
-              "en": "artist",
-              "nl": "artiest"
-            },
-            "example": {
-              "en": "Above & Beyond",
-              "nl": "Above & Beyond"
-            }
-          },
-          {
-            "name": "album",
-            "title": {
-              "en": "album",
-              "nl": "album"
-            },
-            "example": {
-              "en": "We Are All We Need",
-              "nl": "We Are All We Need"
-            }
-          },
-          {
-            "name": "genre",
-            "title": {
-              "en": "genre",
-              "nl": "genre"
-            },
-            "example": {
-              "en": "Dance",
-              "nl": "Dance"
-            }
-          },
-          {
-            "name": "stars",
-            "title": {
-              "en": "stars",
-              "nl": "sterren"
-            },
-            "example": {
-              "en": "5",
-              "nl": "5"
-            }
-          }
-        ]
-      }
+    "permissions": [
+        "homey:manager:speech-input",
+        "homey:manager:speech-output"
     ],
-    "actions": [
-      {
-        "id": "pause",
-        "title": {
-          "en": "Pause",
-          "nl": "Pauzeren"
-        }
-      },
-      {
-        "id": "play",
-        "title": {
-          "en": "Play",
-          "nl": "Afspelen"
-        }
-      },
-      {
-        "id": "playpause",
-        "title": {
-          "en": "Play/Pause",
-          "nl": "Afspelen/Pauzeren"
-        }
-      },
-      {
-        "id": "previous",
-        "title": {
-          "en": "Previous",
-          "nl": "Vorige"
-        }
-      },
-      {
-        "id": "next",
-        "title": {
-          "en": "Next",
-          "nl": "Volgende"
-        }
-      },
-      {
-        "id": "volume",
-        "title": {
-            "en": "Volume",
-            "nl": "Volume"
+    "dependencies": {
+        "mdns-js": "*"
+    },
+    "media": [
+        "play",
+        "pause",
+        "search"
+    ],
+    "speech": [
+        {
+            "id": "itunes",
+            "importance": 1,
+            "triggers": {
+                "en": [
+                    "itunes",
+                    "i tunes"
+                ],
+                "nl": [
+                    "itunes",
+                    "i tunes"
+                ]
+            }
         },
-        "args": [
-          {
-            "name": "volume_percent",
-            "type": "range",
-            "min": 0,
-            "max": 100,
-            "label": "%"
-          }
-        ]
-      },
-      {
-        "id": "volume_down",
-        "title": {
-          "en": "Volume down",
-          "nl": "Volume omlaag"
+        {
+            "id": "pause",
+            "importance": false,
+            "triggers": {
+                "en": [
+                    "pause",
+                    "stop"
+                ],
+                "nl": [
+                    "pauzeer",
+                    "stop"
+                ]
+            }
         },
-        "args": [
-          {
-            "name": "volume_down",
-            "type": "range",
-            "min": 1,
-            "max": 20,
-            "label": "%"
-          }
-        ]
-      },
-      {
-        "id": "volume_up",
-        "title": {
-          "en": "Volume up",
-          "nl": "Volume omhoog"
+        {
+            "id": "play",
+            "importance": false,
+            "triggers": {
+                "en": [
+                    "play",
+                    "start",
+                    "continue"
+                ],
+                "nl": [
+                    "afspelen",
+                    "speel af",
+                    "start",
+                    "hervat"
+                ]
+            }
         },
-        "args": [
-          {
-            "name": "volume_up",
-            "type": "range",
-            "min": 1,
-            "max": 20,
-            "label": "%"
-          }
+        {
+            "id": "previous",
+            "importance": false,
+            "triggers": {
+                "en": [
+                    "previous"
+                ],
+                "nl": [
+                    "vorig",
+                    "vorige"
+                ]
+            }
+        },
+        {
+            "id": "next",
+            "importance": false,
+            "triggers": {
+                "en": [
+                    "next"
+                ],
+                "nl": [
+                    "volgend",
+                    "volgende"
+                ]
+            }
+        },
+        {
+            "id": "volume",
+            "importance": false,
+            "triggers": {
+                "en": [
+                    "volume"
+                ],
+                "nl": [
+                    "volume"
+                ]
+            }
+        },
+        {
+            "id": "nowplaying",
+            "importance": false,
+            "triggers": {
+                "en": [
+                    "current song",
+                    "current itunes song",
+                    "what song is playing",
+                    "what itunes song is playing",
+                    "what song is currently playing",
+                    "what itunes song is currently playing",
+                    "what song is this",
+                    "what itunes song is this",
+                    "what is the name of this song",
+                    "what is the name of this itunes song"
+                ],
+                "nl": [
+                    "huidig nummer",
+                    "huidig itunes nummer",
+                    "welk nummer speelt nu af",
+                    "welk itunes nummer speelt nu af",
+                    "welk nummer speelt momenteel af",
+                    "welk itunes nummer speelt momenteel af",
+                    "welk nummer is dit",
+                    "welk itunes nummer is dit",
+                    "hoe heet dit nummer",
+                    "hoe heet dit itunes nummer"
+                ]
+            }
+        }
+    ],
+    "flow": {
+        "triggers": [
+            {
+                "id": "song_changed",
+                "title": {
+                    "en": "Song changed",
+                    "nl": "Nummer is veranderd"
+                },
+                "tokens": [
+                    {
+                        "name": "name",
+                        "title": {
+                            "en": "name",
+                            "nl": "naam"
+                        },
+                        "example": {
+                            "en": "We're All We Need (feat. Zoe Johnston)",
+                            "nl": "We're All We Need (feat. Zoe Johnston)"
+                        }
+                    },
+                    {
+                        "name": "artist",
+                        "title": {
+                            "en": "artist",
+                            "nl": "artiest"
+                        },
+                        "example": {
+                            "en": "Above & Beyond",
+                            "nl": "Above & Beyond"
+                        }
+                    },
+                    {
+                        "name": "album",
+                        "title": {
+                            "en": "album",
+                            "nl": "album"
+                        },
+                        "example": {
+                            "en": "We Are All We Need",
+                            "nl": "We Are All We Need"
+                        }
+                    },
+                    {
+                        "name": "genre",
+                        "title": {
+                            "en": "genre",
+                            "nl": "genre"
+                        },
+                        "example": {
+                            "en": "Dance",
+                            "nl": "Dance"
+                        }
+                    },
+                    {
+                        "name": "stars",
+                        "title": {
+                            "en": "stars",
+                            "nl": "sterren"
+                        },
+                        "example": {
+                            "en": "5",
+                            "nl": "5"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "song_paused",
+                "title": {
+                    "en": "Song paused",
+                    "nl": "Nummer gepauzeerd"
+                },
+                "tokens": [
+                    {
+                        "name": "name",
+                        "title": {
+                            "en": "name",
+                            "nl": "naam"
+                        },
+                        "example": {
+                            "en": "We're All We Need (feat. Zoe Johnston)",
+                            "nl": "We're All We Need (feat. Zoe Johnston)"
+                        }
+                    },
+                    {
+                        "name": "artist",
+                        "title": {
+                            "en": "artist",
+                            "nl": "artiest"
+                        },
+                        "example": {
+                            "en": "Above & Beyond",
+                            "nl": "Above & Beyond"
+                        }
+                    },
+                    {
+                        "name": "album",
+                        "title": {
+                            "en": "album",
+                            "nl": "album"
+                        },
+                        "example": {
+                            "en": "We Are All We Need",
+                            "nl": "We Are All We Need"
+                        }
+                    },
+                    {
+                        "name": "genre",
+                        "title": {
+                            "en": "genre",
+                            "nl": "genre"
+                        },
+                        "example": {
+                            "en": "Dance",
+                            "nl": "Dance"
+                        }
+                    },
+                    {
+                        "name": "stars",
+                        "title": {
+                            "en": "stars",
+                            "nl": "sterren"
+                        },
+                        "example": {
+                            "en": "5",
+                            "nl": "5"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "song_resumed",
+                "title": {
+                    "en": "Song resumed",
+                    "nl": "Nummer afspelen hervat"
+                },
+                "tokens": [
+                    {
+                        "name": "name",
+                        "title": {
+                            "en": "name",
+                            "nl": "naam"
+                        },
+                        "example": {
+                            "en": "We're All We Need (feat. Zoe Johnston)",
+                            "nl": "We're All We Need (feat. Zoe Johnston)"
+                        }
+                    },
+                    {
+                        "name": "artist",
+                        "title": {
+                            "en": "artist",
+                            "nl": "artiest"
+                        },
+                        "example": {
+                            "en": "Above & Beyond",
+                            "nl": "Above & Beyond"
+                        }
+                    },
+                    {
+                        "name": "album",
+                        "title": {
+                            "en": "album",
+                            "nl": "album"
+                        },
+                        "example": {
+                            "en": "We Are All We Need",
+                            "nl": "We Are All We Need"
+                        }
+                    },
+                    {
+                        "name": "genre",
+                        "title": {
+                            "en": "genre",
+                            "nl": "genre"
+                        },
+                        "example": {
+                            "en": "Dance",
+                            "nl": "Dance"
+                        }
+                    },
+                    {
+                        "name": "stars",
+                        "title": {
+                            "en": "stars",
+                            "nl": "sterren"
+                        },
+                        "example": {
+                            "en": "5",
+                            "nl": "5"
+                        }
+                    }
+                ]
+            }
+        ],
+        "conditions": [
+            {
+                "id": "song_playing",
+                "title": {
+                    "en": "Song !{{is|isn't}} playing",
+                    "nl": "Nummer speelt !{{|niet}} af"
+                }
+            },
+            {
+                "id": "song_paused",
+                "title": {
+                    "en": "Song !{{is|isn't}} paused",
+                    "nl": "Nummer is !{{|niet}} gepauzeerd"
+                }
+            },
+            {
+                "id": "volume",
+                "title": {
+                    "en": "Volume !{{is|isn't}} ",
+                    "nl": "Volume is !{{|niet}} "
+                },
+                "args": [
+                    {
+                        "name": "volume_percent",
+                        "type": "range",
+                        "min": 0,
+                        "max": 100,
+                        "label": "%"
+                    }
+                ]
+            },
+            {
+                "id": "current_stars",
+                "title": {
+                    "en": "Current song rating !{{is|isn't}} ",
+                    "nl": "Huidig nummer beoordeling is !{{|niet}} "
+                },
+                "args": [
+                    {
+                        "name": "stars",
+                        "type": "number",
+                        "min": 0,
+                        "max": 5,
+                        "placeholder": {
+                            "en": "Stars",
+                            "nl": "Sterren"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "current_song",
+                "title": {
+                    "en": "Current song !{{is|isn't}}",
+                    "nl": "Huidig nummer is !{{|niet}}"
+                },
+                "args": [
+                    {
+                        "name": "library",
+                        "type": "autocomplete",
+                        "placeholder": {
+                            "en": "Library",
+                            "nl": "Bibliotheek"
+                        }
+                    },
+                    {
+                        "name": "artist",
+                        "type": "autocomplete",
+                        "placeholder": {
+                            "en": "Artist",
+                            "nl": "Artiest"
+                        }
+                    },
+                    {
+                        "name": "song",
+                        "type": "autocomplete",
+                        "placeholder": {
+                            "en": "Song",
+                            "nl": "Nummer"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "current_artist",
+                "title": {
+                    "en": "Current artist !{{is|isn't}}",
+                    "nl": "Huidige artiest is !{{|niet}}"
+                },
+                "args": [
+                    {
+                        "name": "library",
+                        "type": "autocomplete",
+                        "placeholder": {
+                            "en": "Library",
+                            "nl": "Bibliotheek"
+                        }
+                    },
+                    {
+                        "name": "artist",
+                        "type": "autocomplete",
+                        "placeholder": {
+                            "en": "Artist",
+                            "nl": "Artiest"
+                        }
+                    }
+                ]
+            }
+        ],
+        "actions": [
+            {
+                "id": "pause",
+                "title": {
+                    "en": "Pause",
+                    "nl": "Pauzeren"
+                }
+            },
+            {
+                "id": "play",
+                "title": {
+                    "en": "Play",
+                    "nl": "Afspelen"
+                }
+            },
+            {
+                "id": "playpause",
+                "title": {
+                    "en": "Play/Pause",
+                    "nl": "Afspelen/Pauzeren"
+                }
+            },
+            {
+                "id": "previous",
+                "title": {
+                    "en": "Previous",
+                    "nl": "Vorige"
+                }
+            },
+            {
+                "id": "next",
+                "title": {
+                    "en": "Next",
+                    "nl": "Volgende"
+                }
+            },
+            {
+                "id": "volume",
+                "title": {
+                    "en": "Volume",
+                    "nl": "Volume"
+                },
+                "args": [
+                    {
+                        "name": "volume_percent",
+                        "type": "range",
+                        "min": 0,
+                        "max": 100,
+                        "label": "%"
+                    }
+                ]
+            },
+            {
+                "id": "volume_down",
+                "title": {
+                    "en": "Volume down",
+                    "nl": "Volume omlaag"
+                },
+                "args": [
+                    {
+                        "name": "volume_down",
+                        "type": "range",
+                        "min": 1,
+                        "max": 20,
+                        "label": "%"
+                    }
+                ]
+            },
+            {
+                "id": "volume_up",
+                "title": {
+                    "en": "Volume up",
+                    "nl": "Volume omhoog"
+                },
+                "args": [
+                    {
+                        "name": "volume_up",
+                        "type": "range",
+                        "min": 1,
+                        "max": 20,
+                        "label": "%"
+                    }
+                ]
+            },
+            {
+                "id": "say_nowplaying",
+                "title": {
+                    "en": "Say current song",
+                    "nl": "Zeg huidig nummer "
+                }
+            },
+            {
+                "id": "say_currentrating",
+                "title": {
+                    "en": "Say current song rating",
+                    "nl": "Zeg huidige nummer beoordeling"
+                }
+            },
+            {
+                "id": "play_artist",
+                "title": {
+                    "en": "Play music from artist",
+                    "nl": "Speel muziek van artiest"
+                },
+                "args": [
+                    {
+                        "name": "library",
+                        "type": "autocomplete",
+                        "placeholder": {
+                            "en": "Library",
+                            "nl": "Bibliotheek"
+                        }
+                    },
+                    {
+                        "name": "artist",
+                        "type": "autocomplete",
+                        "placeholder": {
+                            "en": "Artist",
+                            "nl": "Artiest"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "play_song",
+                "title": {
+                    "en": "Play song",
+                    "nl": "Speel nummer"
+                },
+                "args": [
+                    {
+                        "name": "library",
+                        "type": "autocomplete",
+                        "placeholder": {
+                            "en": "Library",
+                            "nl": "Bibliotheek"
+                        }
+                    },
+                    {
+                        "name": "artist",
+                        "type": "autocomplete",
+                        "placeholder": {
+                            "en": "Artist",
+                            "nl": "Artiest"
+                        }
+                    },
+                    {
+                        "name": "song",
+                        "type": "autocomplete",
+                        "placeholder": {
+                            "en": "Song",
+                            "nl": "Nummer"
+                        }
+                    }
+                ]
+            }
         ]
-      },
-      {
-        "id": "say_nowplaying",
-        "title": {
-          "en": "Say current song",
-          "nl": "Zeg huidig nummer "
-        }
-      },
-      {
-        "id": "say_currentrating",
-        "title": {
-          "en": "Say current song rating",
-          "nl": "Zeg huidige nummer beoordeling"
-        }
-      }
-    ]
-  }
+    }
 }

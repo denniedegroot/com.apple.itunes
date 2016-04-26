@@ -1,2 +1,5 @@
 .DS_Store
 .idea/
+node_modules/nodemock/
+app-mock.js
+lib/mock-homey.js
