@@ -2,11 +2,11 @@
 
 require('./lib/mock-homey.js'); // Mocks the global Homey object.
 
-var daapPairCode = 'yourpaircode'; // Change to your itunes paircode
+var daapPairCode = '0x0FDFF6D433D55A65'; // Change to your itunes paircode
 function test() {
     setTimeout(function() {
         // Your test code here
-        
+        media.action_say_currentrating(function(){},null);
     }, 2000);
 }
 
@@ -31,7 +31,6 @@ var sessioninfo = {};
 function init() {
     settings.init(daap, function () {
         session.init(daap, sessioninfo);
-        //console.log(daap);
 
         media.init(daap, sessioninfo);
         controls.init(daap, sessioninfo);
@@ -47,26 +46,40 @@ function init() {
 module.exports.init = init;
 // << END of original app.js content
 
-//setPairingSettings(daap);
+setPairingSettings(daap);
 init();
-test();
 
 function setPairingSettings(daap) {
-    daap.pairingCode = daapPairCode;
+    daap.paircode = daapPairCode;
     doPairIfNeeded(daap);
 }
 
 /* Start pairing when no paircode is set */
 function doPairIfNeeded(daap) {
-    if (daap.pairingCode == 'yourpaircode' || daap.pairingCode == '') {
-        var pairing = require('./lib/pairing.js');
+    if (daap.paircode == 'yourpaircode' || daap.paircode == '') {
+        var pair = require('./lib/pairing.js');
 
         Homey.log('Starting pairing process');
-        pairing.code(function(data) {
+        pair.code(function (error, data) {
+            if (error) {
+                return Homey.log(error);
+            }
             console.log(data);
-            daap.host = data.host;
-            daap.pairingCode = data.paircode;
-            Homey.log('Pairing process done');
+
+            var config = {};
+            config.host = data.host;
+            config.paircode = data.paircode;
+            config.pairstart = false;
+
+            daap.paircode = data.paircode;
+            // pair.discoverserver();
+
+            Homey.manager('settings').set('settings', config);
+            Homey.manager('api').realtime('settings_changed', config);
+            Homey.log('Pairing process done, put the paircode in the mock daapPairCode variable to use it next time.');
+            test();
         });
+    } else {
+        test();
     }
 }
