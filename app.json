@@ -614,6 +614,23 @@
                         }
                     }
                 ]
+            },
+            {
+                "id": "play_playlist",
+                "title": {
+                    "en": "Play music from playlist",
+                    "nl": "Speel muziek van afspeellijst"
+                },
+                "args": [
+                    {
+                        "name": "playlist",
+                        "type": "autocomplete",
+                        "placeholder": {
+                            "en": "Playlist",
+                            "nl": "Afspeellijst"
+                        }
+                    }
+                ]
             }
         ]
     }
