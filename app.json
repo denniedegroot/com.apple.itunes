@@ -153,6 +153,38 @@
                     "hoe heet dit itunes nummer"
                 ]
             }
+        },
+        {
+          "id": "repeat",
+          "importance": false,
+          "triggers": {
+            "en": [
+              "repeat",
+              "repeating"
+            ],
+            "nl": [
+              "herhalen",
+              "herhaal",
+              "repeat",
+              "repeaten"
+            ]
+          }
+        },
+        {
+          "id": "shuffle",
+          "importance": false,
+          "triggers": {
+            "en": [
+              "shuffle",
+              "shuffling"
+            ],
+            "nl": [
+              "willekeurig afspelen",
+              "willekeurige volgorde",
+              "shuffel",
+              "shuffle"
+            ]
+          }
         }
     ],
     "flow": {
@@ -542,6 +574,63 @@
                         "label": "%"
                     }
                 ]
+            },
+            {
+                "id": "set_repeat",
+                "title": {
+                    "en": "Set repeat",
+                    "nl": "Herhalen instellen"
+                },
+                "args": [
+                    {
+                        "name": "repeat",
+                        "type": "dropdown",
+                        "values": [
+                          { "id": "0",
+                            "label": {
+                              "en": "Off",
+                              "nl": "Uit"
+                            }
+                          },
+                          { "id": "1",
+                            "label": {
+                              "en": "Track",
+                              "nl": "Nummer"
+                            }
+                          },{ "id": "2",
+                            "label": {
+                              "en": "All",
+                              "nl": "Alles"
+                            }
+                          } ]
+                    }
+                ]
+            },
+            {
+              "id": "set_shuffle",
+              "title": {
+                "en": "Set shuffle",
+                "nl": "Shuffle instellen"
+              },
+              "args": [
+                {
+                  "name": "shuffle",
+                  "type": "dropdown",
+                  "values": [
+                    { "id": "0",
+                      "label": {
+                        "en": "Off",
+                        "nl": "Uit"
+                      }
+                    },
+                    { "id": "1",
+                      "label": {
+                        "en": "On",
+                        "nl": "Aan"
+                      }
+                    } ]
+                }
+              ]
             },
             {
                 "id": "say_nowplaying",

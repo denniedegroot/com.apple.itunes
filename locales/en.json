@@ -1,4 +1,15 @@
 {
+    "common": {
+      "on": "on",
+      "off": "off",
+      "enable": "enable",
+      "disable": "disable",
+      "stop": "stop",
+      "start": "start",
+      "all": "all",
+      "track": "track",
+      "song": "song"
+    },
     "actions": {
         "say_nowplaying": "Playing __song__ by __artist__",
         "say_stars": "__stars__ stars",

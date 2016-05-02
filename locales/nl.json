@@ -1,4 +1,13 @@
 {
+    "common": {
+      "on": "aan",
+      "off": "uit",
+      "stop": "stop",
+      "start": "start",
+      "all": "alles",
+      "track": "nummer",
+      "song": "lied"
+    },
     "actions": {
         "say_nowplaying": "Speelt nu __song__ van __artist__",
         "say_stars": "__stars__ sterren",
