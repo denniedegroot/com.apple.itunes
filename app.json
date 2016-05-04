@@ -125,6 +125,38 @@
             }
         },
         {
+            "id": "repeat",
+            "importance": false,
+            "triggers": {
+                "en": [
+                    "repeat",
+                    "repeating"
+                ],
+                "nl": [
+                    "herhalen",
+                    "herhaal",
+                    "repeat",
+                    "repeaten"
+                ]
+            }
+        },
+        {
+            "id": "shuffle",
+            "importance": false,
+            "triggers": {
+                "en": [
+                    "shuffle",
+                    "shuffling"
+                ],
+                "nl": [
+                    "willekeurig afspelen",
+                    "willekeurige volgorde",
+                    "shuffel",
+                    "shuffle"
+                ]
+            }
+        },
+        {
             "id": "nowplaying",
             "importance": false,
             "triggers": {
@@ -540,6 +572,71 @@
                         "min": 1,
                         "max": 20,
                         "label": "%"
+                    }
+                ]
+            },
+            {
+                "id": "repeat",
+                "title": {
+                    "en": "Repeat",
+                    "nl": "Herhalen"
+                },
+                "args": [
+                    {
+                        "name": "repeat",
+                        "type": "dropdown",
+                        "values": [
+                            {
+                                "id": "0",
+                                "label": {
+                                    "en": "Off",
+                                    "nl": "Uit"
+                                }
+                            },
+                            {
+                                "id": "1",
+                                "label": {
+                                    "en": "Song",
+                                    "nl": "Nummer"
+                                }
+                            },
+                            {
+                                "id": "2",
+                                "label": {
+                                    "en": "All",
+                                    "nl": "Alles"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "shuffle",
+                "title": {
+                    "en": "Shuffle",
+                    "nl": "Shuffle"
+                },
+                "args": [
+                    {
+                        "name": "shuffle",
+                        "type": "dropdown",
+                        "values": [
+                            {
+                                "id": "0",
+                                "label": {
+                                    "en": "Off",
+                                    "nl": "Uit"
+                                }
+                            },
+                            {
+                                "id": "1",
+                                "label": {
+                                    "en": "On",
+                                    "nl": "Aan"
+                                }
+                            }
+                        ]
                     }
                 ]
             },
