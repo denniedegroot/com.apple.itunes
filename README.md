@@ -1,5 +1,19 @@
-# iTunes for Homey
+# iTunes for Homey (Testing)
 This app will connect Homey with iTunes to control your music.
+
+## Setup:
+- Run `npm install` to get all required dependencies like nodeunit and rewire for unit-testing.
+
+## Run:
+- Run `npm start` to start the application locally without the Homey device.
+
+## Unit-Testing:
+- Run `npm test` to run all unit-tests in the `/test` folder using NodeUnit.
+
+## Extra:
+- Any code you want to run can be put inside **app-mock.js myTestCode()** and will execute automaticly when an iTunes session is established by pairing.
+- The app will start pairing on startup by default showing up in any iTunes client unless the **paircode/host(optional)** is hardcoded in **app-mock.js** making it connect right away.
+
 
 ## Features:
 - Pair with iTunes
