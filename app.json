@@ -37,7 +37,6 @@
     },
     "media": [
         "play",
-        "pause",
         "search"
     ],
     "speech": [
@@ -57,7 +56,7 @@
         },
         {
             "id": "pause",
-            "importance": false,
+            "importance": 0,
             "triggers": {
                 "en": [
                     "pause",
@@ -71,7 +70,7 @@
         },
         {
             "id": "play",
-            "importance": false,
+            "importance": 0,
             "triggers": {
                 "en": [
                     "play",
@@ -88,7 +87,7 @@
         },
         {
             "id": "previous",
-            "importance": false,
+            "importance": 0,
             "triggers": {
                 "en": [
                     "previous"
@@ -101,7 +100,7 @@
         },
         {
             "id": "next",
-            "importance": false,
+            "importance": 0,
             "triggers": {
                 "en": [
                     "next"
@@ -114,7 +113,7 @@
         },
         {
             "id": "volume",
-            "importance": false,
+            "importance": 0,
             "triggers": {
                 "en": [
                     "volume"
@@ -126,7 +125,7 @@
         },
         {
             "id": "repeat",
-            "importance": false,
+            "importance": 0,
             "triggers": {
                 "en": [
                     "repeat",
@@ -142,7 +141,7 @@
         },
         {
             "id": "shuffle",
-            "importance": false,
+            "importance": 0,
             "triggers": {
                 "en": [
                     "shuffle",
@@ -158,7 +157,7 @@
         },
         {
             "id": "nowplaying",
-            "importance": false,
+            "importance": 0,
             "triggers": {
                 "en": [
                     "current song",
@@ -639,6 +638,13 @@
                         ]
                     }
                 ]
+            },
+            {
+                "id": "logout",
+                "title": {
+                    "en": "Logout",
+                    "nl": "Uitloggen"
+                }
             },
             {
                 "id": "say_nowplaying",
